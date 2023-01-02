@@ -1,8 +1,14 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: 84837
+  Date: 1/2/2023
+  Time: 9:07 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>information</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,7 +23,7 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css'>
     <link href="css/home.css" rel="stylesheet">
 </head>
-
+<body>
 <nav class="navbar navbar-expand-sm navbar-dark"
      style="height: 90px; font-size: large; background-color:#212529; opacity: 1;">
     <div class="container-fluid">
@@ -74,105 +80,36 @@
     </div>
 </nav>
 
-<!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-    <!-- Indicators/dots -->
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-    </div>
-
-    <!-- The slideshow/carousel -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="img/banner11.jpg" alt="Los Angeles" class="d-block" style="width:100%">
-        </div>
-        <div class="carousel-item">
-            <img src="img/banner22.jpg" alt="Chicago" class="d-block" style="width:100%">
-        </div>
-        <div class="carousel-item">
-            <img src="img/banner33.jpg" alt="New York" class="d-block" style="width:100%">
-        </div>
-        <div class="carousel-item">
-            <img src="img/banner44.jpg" alt="New York" class="d-block" style="width:100%">
-        </div>
-    </div>
-
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
-
-<div class="navbar navbar-expand-sm navbar-dark" style="background-color: #212529"></div>
-
 <div class="container-fluid" style="margin-top: 2%">
-    <div style="text-align: center">
-        <h4>Sản phẩm mới</h4>
-    </div>
-</div>
-
-<div class="container-fluid" style="margin-top: 2%; text-align: center">
-    <div>
-        <img class="col-md-4" src="img/banner33.jpg" style="width: 400px; margin-top: 2%">
-        <img class="col-md-4" src="img/banner11.jpg" style="width: 400px; margin-top: 2%">
-        <img class="col-md-4" src="img/banner44.jpg" style="width: 400px; margin-top: 2%">
-    </div>
-</div>
-
-<div class="container-fluid" style="margin-top: 2%">
-    <div style="text-align: center">
-        <h4>Các sản phẩm bán chạy</h4>
-    </div>
-</div>
-
-<div class="container-fluid" style="margin-top: 2%">
-    <div style="text-align: center">
-        <img class="col-md-3" src="img/banner33.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner11.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner44.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner22.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner33.jpg" style="width: 250px; margin-top: 2%">
-    </div>
-</div>
-
-<div class="container-fluid" style="margin-top: 2%">
-    <div style="text-align: center">
-        <h4 class="btn btn-primary">Xem thêm</h4>
-    </div>
-</div>
-
-<div class="grid container-fluid">
-    <figure class="effect-zoe">
-        <img src="https://tympanus.net/Development/HoverEffectIdeas/img/25.jpg" alt="img25"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe">
-        <img src="https://tympanus.net/Development/HoverEffectIdeas/img/26.jpg" alt="img26"/>
-        <figcaption>
-            <h2>99.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
+    <ul class="col-md-6">
+        <div>
+            <img src="img/banner33.jpg" style="width: 650px">
+        </div>
+        <div style="text-align: left">
+            <div style="margin-top: 2%">
+                <img src="img/banner11.jpg" style="width: 200px; height: 150px; margin-left: 5px">
+                <img src="img/banner44.jpg" style="width: 200px; height: 150px; margin-left: 5px">
+                <img src="img/banner22.jpg" style="width: 200px; height: 150px; margin-left: 5px">
+            </div>
+        </div>
+    </ul>
+    <ul class="col-md-5">
+        <table>
+            <tr>
+                <td>Tên sản phẩm</td>
+            </tr>
+            <tr>
+                <td>Giá sản phẩm</td>
+            </tr>
+            <tr>
+                <td>Chi tiết sản phẩm</td>
+            </tr>
+            <tr>
+                <td>Thêm vào giỏ</td>
+                <td>Mua hàng</td>
+            </tr>
+        </table>
+    </ul>
 </div>
 
 
@@ -259,5 +196,6 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
