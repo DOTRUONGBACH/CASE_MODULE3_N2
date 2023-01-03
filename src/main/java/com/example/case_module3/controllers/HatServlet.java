@@ -19,19 +19,19 @@ public class HatServlet extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
-    //  @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String username = req.getParameter("username");
-//        String password = req.getParameter("password");
-//        Account account = userService.checkLogin(username,password);
-//        if (account!= null){
-//            HttpSession session = req.getSession();
-//            session.setAttribute("account",account);
-//            resp.sendRedirect("/products");
-//        } else {
-//            resp.sendRedirect("/login?mess=error");
-//
-//        }
-//    }
-//    }
+      @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        Account account = userService.checkLogin(username,password);
+        if (account!= null){
+            HttpSession session = req.getSession();
+            session.setAttribute("account",account);
+            resp.sendRedirect("/products");
+        } else {
+            resp.sendRedirect("/login?mess=error");
+
+        }
+    }
+    }
 }

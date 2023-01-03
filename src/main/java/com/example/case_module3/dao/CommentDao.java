@@ -39,9 +39,10 @@ public class CommentDao implements DaoInterface<Comment> {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setInt(5, comment.getCommentId());
-            preparedStatement.setString(1, comment.getCommentDetail());
-            preparedStatement.setInt(2, comment.getHatId());
-            preparedStatement.setString(3, comment.getStar());
+            preparedStatement.setString(1, comment.getUserName());
+            preparedStatement.setString(2, comment.getCommentDetail());
+            preparedStatement.setInt(3, comment.getHatId());
+            preparedStatement.setString(4, comment.getStar());
             return preparedStatement.execute();
         } catch (Exception e) {
             e.printStackTrace();
