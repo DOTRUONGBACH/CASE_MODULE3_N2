@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserDao {
+    static Connection connection = ConnectionMySql.getConnection();
     public static UserDao getInstance() {
         return new UserDao();
     }
@@ -28,11 +29,61 @@ public class UserDao {
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int customerId = resultSet.getInt("customerId");
-                return new User( username, password, role, fullName, age, phone, email,customerId);
+                return new User(customerId, username, password, role, fullName, age, phone, email);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
+    }
+    public void insert(User user){
+        String insertSql = "insert into User( id,  username,  password,  role,  fullName,  age,  phone,  email,  customerId) value (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
+            preparedStatement.setInt(1, user.getCustomerId());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(4, user.getRole());
+            preparedStatement.setString(5, user.getFullName());
+            preparedStatement.setInt(6, user.getAge());
+            preparedStatement.setString(7, user.getPhone());
+            preparedStatement.setString(8, user.getEmail());
+            preparedStatement.setInt(9, user.getCustomerId());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public boolean update(User user) {
+        String updateSql = "UPDATE from User/n"
+                +"Set id = ?,  username= ?,  password= ?,  role= ?,  fullName= ?,  age= ?,  phone= ?,  email= ?,  customerId= ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+            preparedStatement.setInt(1, user.getCustomerId());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(4, user.getRole());
+            preparedStatement.setString(5, user.getFullName());
+            preparedStatement.setInt(6, user.getAge());
+            preparedStatement.setString(7, user.getPhone());
+            preparedStatement.setString(8, user.getEmail());
+            preparedStatement.setInt(9, user.getCustomerId());
+            return preparedStatement.execute();
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public void delete(int id) {
+        String deleteSql = "delete FROM User where Id = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
