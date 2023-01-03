@@ -8,12 +8,12 @@ public class User {
     private int age;
     private String phone;
     private String email;
-
+     private int customerId;
 
     public User() {
     }
 
-    public User(int id, String username, String password, String role, String fullName, int age, String phone, String email) {
+    public User(int id, String username, String password, String role, String fullName, int age, String phone, String email, int customerId) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -22,6 +22,7 @@ public class User {
         this.age = age;
         this.phone = phone;
         this.email = email;
+        this.customerId = customerId;
     }
 
     public int getId() {
@@ -86,5 +87,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 }

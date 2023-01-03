@@ -12,7 +12,7 @@ public class UserDao {
         return new UserDao();
     }
 
-    public User checkLogin(String username, String password) {
+    public User selectAcc(String username, String password) {
 
         String sql = " select * from account where username = ? and password = ?";
         try (Connection connection = ConnectionMySql.getConnection()) {
@@ -26,8 +26,9 @@ public class UserDao {
                 String fullName = resultSet.getString("fullname");
                 String phone = resultSet.getString("phone");
                 String email = resultSet.getString("email");
-                Integer age = resultSet.getInt("age");
-                return new User(id, username, password, role, fullName, age, phone, email);
+                int age = resultSet.getInt("age");
+                int customerId = resultSet.getInt("customerId");
+                return new User(id, username, password, role, fullName, age, phone, email,customerId);
             }
         } catch (Exception e) {
             e.printStackTrace();

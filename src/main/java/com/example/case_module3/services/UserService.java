@@ -6,7 +6,7 @@ import com.example.case_module3.models.User;
 import java.util.List;
 
 public class UserService {
-    public static List<User> users = UserDao.getInstance().selectAll();
+    public static List<User> users = UserDao.getInstance().;
 
     public void Add(User user) {
         UserDao.getInstance().insert(user);
