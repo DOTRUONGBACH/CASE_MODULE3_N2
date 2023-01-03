@@ -15,6 +15,8 @@ public class HattypeDao implements DaoInterface<Hattype> {
         return new HattypeDao();
     }
 
+
+
     @Override
     public void insert(Hattype hattype) {
         String insertSql = "insert into Hattype(typeName) value (?)";
@@ -76,7 +78,7 @@ public class HattypeDao implements DaoInterface<Hattype> {
     }
 
     @Override
-    public Hattype selectById() {
+    public Hattype selectById(int id) {
         String sql = "Select * from Hattype where idHattype=?";
         try {
             Statement statement = connection.createStatement();

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 84837
@@ -89,9 +90,13 @@
 
 <div class="container-fluid" style="margin-top: 2%">
   <div style="text-align: center">
-    <h4>Các sản phẩm mũ trẻ em</h4>
+
+    <h4>${hattype}</h4>
+
   </div>
 </div>
+
+
 
 <div class="container-fluid" style="margin-top: 2%">
   <div style="text-align: center">

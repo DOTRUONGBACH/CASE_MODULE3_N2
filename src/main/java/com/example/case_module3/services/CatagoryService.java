@@ -19,7 +19,7 @@ public class CatagoryService {
     }
 
     public void Edit() {
-        CatagoryDao.getInstance().update(CatagoryDao.getInstance().selectById());
+//        CatagoryDao.getInstance().update(CatagoryDao.getInstance().selectById(id));
         catagories = CatagoryDao.getInstance().selectAll();
     }
 }

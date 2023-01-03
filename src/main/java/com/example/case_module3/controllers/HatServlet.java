@@ -1,8 +1,10 @@
 package com.example.case_module3.controllers;
 
 import com.example.case_module3.dao.UserDao;
+import com.example.case_module3.models.Hattype;
 import com.example.case_module3.models.User;
 import com.example.case_module3.services.HatService;
+import com.example.case_module3.services.HattypeService;
 import com.example.case_module3.services.UserService;
 
 import javax.servlet.RequestDispatcher;
@@ -20,6 +22,9 @@ public class HatServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+
+        List<Hattype> hattypes = HattypeService.hattypes;
+        req.setAttribute("hattype", hattypes);
         dispatcher.forward(req, resp);
     }
 
@@ -28,11 +33,15 @@ public class HatServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
           List<User> users = UserDao.getInstance().selectAcc();
+HttpSession session = req.getSession();
 
           for (int i = 0; i < users.size(); i++) {
               if(username.equals(users.get(i).getUsername())&&password.equals(users.get(i).getPassword())){
-                  RequestDispatcher dispatcher = req.getRequestDispatcher("/user.jsp");
+                  RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+                  session.setAttribute("username",users.get(i).getUsername());
+                  //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
                   dispatcher.forward(req,resp);
+                  return;
               }
           }
           req.setAttribute("note", "Sai ten dang nhap!");

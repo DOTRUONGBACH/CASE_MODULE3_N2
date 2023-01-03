@@ -29,26 +29,28 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
             <ul class="navbar-nav">
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Giới thiệu</a>
                 </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nam</a>
+
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mũ lưỡi chai</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ len</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ Jacket</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ Cối</a></li>
+                        <c:forEach var="p" items="${hattype}">
+                        <li><a class="dropdown-item" href="/hatstyle?id=${p.idHattype}">${p.typeName}</a></li>
+                        </c:forEach>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nữ</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mũ lưỡi chai</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ len</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ Jacket</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ Cói</a></li>
+                        <c:forEach var="p" items="${hattype}">
+                            <li><a class="dropdown-item" href="#">${p.typeName}</a></li>
+                        </c:forEach>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -60,13 +62,37 @@
                         <input type="search" id="search" placeholder="Search..."/>
                     </div>
                 </li>
-                <li class="nav-item" style="position: absolute; left: 82%">
-                    <div class="nav-link btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal2" href="#">Đăng ký</div>
-                </li>
-                <li class="nav-item" style="position: absolute; left: 90%">
-                    <div class="nav-link btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal" href="#">Đăng nhập</div>
-                </li>
+                <c:if test="${sessionScope.get('username') == null}">
+                    <li class="nav-item" style="position: absolute; left: 82%">
+                        <div class="nav-link btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal2" href="#">Đăng ký</div>
+                    </li>
+                    <li class="nav-item" style="position: absolute; left: 90%">
+                        <div class="nav-link btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal" href="#">Đăng nhập</div>
+                    </li>
+                </c:if>
+//test = ... là cú pháp
+                <c:if test="${sessionScope.get('username') != null}">
+                    <li class="nav-item" style="position: absolute; left: 75%">
+                        <div class="dropdown">
+                            <div class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
+                                Hello...@gmail.com
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                                <li><a class="dropdown-item" href="#">Sửa thông tin</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="position: absolute; left: 90%">
+                        <div class="nav-link btn btn-secondary" href="#">Giỏ hàng</div>
+                    </li>
+                </c:if>
             </ul>
+
         </div>
     </div>
 </nav>
