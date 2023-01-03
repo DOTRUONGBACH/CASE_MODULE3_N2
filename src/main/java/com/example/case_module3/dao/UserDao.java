@@ -21,14 +21,14 @@ public class UserDao {
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
+
                 String role = resultSet.getString("role");
                 String fullName = resultSet.getString("fullname");
                 String phone = resultSet.getString("phone");
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int customerId = resultSet.getInt("customerId");
-                return new User(id, username, password, role, fullName, age, phone, email,customerId);
+                return new User( username, password, role, fullName, age, phone, email,customerId);
             }
         } catch (Exception e) {
             e.printStackTrace();

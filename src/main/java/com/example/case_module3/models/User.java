@@ -1,6 +1,6 @@
 package com.example.case_module3.models;
 public class User {
-    private int id;
+    private int customerId;
     private String username;
     private String password;
     private String role;
@@ -8,13 +8,13 @@ public class User {
     private int age;
     private String phone;
     private String email;
-     private int customerId;
+
 
     public User() {
     }
 
-    public User(int id, String username, String password, String role, String fullName, int age, String phone, String email, int customerId) {
-        this.id = id;
+    public User( String username, String password, String role, String fullName, int age, String phone, String email, int customerId) {
+
         this.username = username;
         this.password = password;
         this.role = role;
@@ -23,14 +23,6 @@ public class User {
         this.phone = phone;
         this.email = email;
         this.customerId = customerId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {
