@@ -12,7 +12,7 @@ public interface DaoInterface<T> {
 
     public void delete(int id);
 
-    public List<Hat> selectAll();
+    public List<T> selectAll();
 
     public T selectById();
 
