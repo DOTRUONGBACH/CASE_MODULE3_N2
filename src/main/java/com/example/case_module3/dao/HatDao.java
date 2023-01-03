@@ -1,6 +1,7 @@
 package com.example.case_module3.dao;
 
 import com.example.case_module3.models.Hat;
+import com.example.case_module3.models.Hattype;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -101,8 +102,10 @@ public class HatDao implements DaoInterface<Hat> {
         return hats;
     }
 
+
+
     @Override
-    public Hat selectById() {
+    public Hat selectById(int id) {
         String sql = "Select * from Hat where hatId = ?";
         try {
             Statement statement = connection.createStatement();

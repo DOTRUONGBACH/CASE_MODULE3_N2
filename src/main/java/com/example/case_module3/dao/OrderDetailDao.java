@@ -81,7 +81,7 @@ public class OrderDetailDao implements DaoInterface<OrderDetail> {
     }
 
     @Override
-    public OrderDetail selectById() {
+    public OrderDetail selectById(int id) {
         String sql = "Select * from OrderDetail where idOrder = ?";
         try {
             Statement statement = connection.createStatement();

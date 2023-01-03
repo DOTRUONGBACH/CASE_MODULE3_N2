@@ -19,7 +19,7 @@ public class CommentService {
     }
 
     public void Edit() {
-        CommentDao.getInstance().update(CommentDao.getInstance().selectById());
+//        CommentDao.getInstance().update(CommentDao.getInstance().selectById());
         comments = CommentDao.getInstance().selectAll();
     }
 }

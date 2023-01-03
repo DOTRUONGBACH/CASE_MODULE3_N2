@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 84837
@@ -65,21 +66,35 @@
         </li>
         <li class="nav-item" style="position: absolute; left: 75%">
           <div class="dropdown">
-            <div class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
-              Hello...@gmail.com
-            </div>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Thông tin</a></li>
-              <li><a class="dropdown-item" href="#">Sửa thông tin</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-            </ul>
-          </div>
+            <c:if test="${sessionScope.get('username') == null}">
+        <li class="nav-item" style="position: absolute; left: 82%">
+          <div class="nav-link btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal2" href="#">Đăng ký</div>
         </li>
         <li class="nav-item" style="position: absolute; left: 90%">
-          <div class="nav-link btn btn-secondary" href="#">Giỏ hàng</div>
+          <div class="nav-link btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal" href="#">Đăng nhập</div>
+        </li>
+        </c:if>
+        //test = ... là cú pháp
+        <c:if test="${sessionScope.get('username') != null}">
+          <li class="nav-item" style="position: absolute; left: 75%">
+            <div class="dropdown">
+              <div class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
+                Hello ${username}
+              </div>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                <li><a class="dropdown-item" href="#">Sửa thông tin</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item" style="position: absolute; left: 90%">
+            <div class="nav-link btn btn-secondary" href="#">Giỏ hàng</div>
+          </li>
+        </c:if>
         </li>
       </ul>
     </div>
@@ -89,9 +104,13 @@
 
 <div class="container-fluid" style="margin-top: 2%">
   <div style="text-align: center">
-    <h4>Các sản phẩm mũ trẻ em</h4>
+
+    <h4>${hattype}</h4>
+
   </div>
 </div>
+
+
 
 <div class="container-fluid" style="margin-top: 2%">
   <div style="text-align: center">

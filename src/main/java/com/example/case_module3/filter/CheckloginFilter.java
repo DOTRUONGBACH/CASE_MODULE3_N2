@@ -11,8 +11,10 @@ public class CheckloginFilter extends HttpFilter {
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException, IOException, ServletException {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("account");
+        String path = req.getContextPath();
+
         if(user == null){
-            res.sendRedirect("/login");
+            res.sendRedirect("/home");
         }else {
             chain.doFilter(req,res);
         }

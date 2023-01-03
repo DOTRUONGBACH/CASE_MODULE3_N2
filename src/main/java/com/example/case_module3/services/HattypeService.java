@@ -19,7 +19,9 @@ public class HattypeService {
     }
 
     public void Edit() {
-        HattypeDao.getInstance().update(HattypeDao.getInstance().selectById());
+//        HattypeDao.getInstance().update(HattypeDao.getInstance().selectById());
         hattypes = HattypeDao.getInstance().selectAll();
     }
+
+
 }

@@ -18,8 +18,8 @@ public class OrderDetailService {
         orderDetails = OrderDetailDao.getInstance().selectAll();
     }
 
-    public void Edit() {
-        OrderDetailDao.getInstance().update(OrderDetailDao.getInstance().selectById());
-        orderDetails = OrderDetailDao.getInstance().selectAll();
-    }
+//    public void Edit() {
+//        OrderDetailDao.getInstance().update(OrderDetailDao.getInstance().selectById());
+//        orderDetails = OrderDetailDao.getInstance().selectAll();
+//    }
 }

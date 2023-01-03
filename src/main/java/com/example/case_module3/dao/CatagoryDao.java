@@ -76,7 +76,7 @@ public class CatagoryDao implements DaoInterface<Catagory> {
     }
 
     @Override
-    public Catagory selectById() {
+    public Catagory selectById(int id) {
         String sql = "Select * from Catagory where idCatagory = ?";
         try {
             Statement statement = connection.createStatement();

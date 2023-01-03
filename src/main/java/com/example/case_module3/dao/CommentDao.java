@@ -84,7 +84,7 @@ public class CommentDao implements DaoInterface<Comment> {
     }
 
     @Override
-    public Comment selectById() {
+    public Comment selectById(int id) {
         String sql = "Select * from Comment where commentId = ?";
         try {
             Statement statement = connection.createStatement();

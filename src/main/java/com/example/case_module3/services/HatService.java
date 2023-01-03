@@ -19,7 +19,7 @@ public class HatService {
     }
 
     public void Edit() {
-        HatDao.getInstance().update(HatDao.getInstance().selectById());
+//        HatDao.getInstance().update(HatDao.getInstance().selectById());
         hats = HatDao.getInstance().selectAll();
     }
 
