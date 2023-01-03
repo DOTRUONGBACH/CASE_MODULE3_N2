@@ -67,7 +67,7 @@
                     <div class="nav-link" href="#">Đăng ký</div>
                 </li>
                 <li class="nav-item" style="position: absolute; left: 90%">
-                    <div class="nav-link" href="#">Đăng nhập</div>
+                    <div class="nav-link" href="/Login.jsp">Đăng nhập</div>
                 </li>
             </ul>
         </div>
