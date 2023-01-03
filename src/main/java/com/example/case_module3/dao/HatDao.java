@@ -1,5 +1,6 @@
 package com.example.case_module3.dao;
 
+import com.example.case_module3.models.Comment;
 import com.example.case_module3.models.Hat;
 
 import java.sql.*;
