@@ -1,151 +1,123 @@
 <%--
   Created by IntelliJ IDEA.
-  User: johntoan98gmail.com
-  Date: 28/12/2022
-  Time: 10:21
+  User: dell
+  Date: 1/3/2023
+  Time: 2:56 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Login Page</title>
-  <!--Made with love by Mutiullah Samim -->
-
-  <!--Bootsrap 4 CDN-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <!--Fontawesome CDN-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-  <!--Custom styles-->
-  <style>
-    /* Made with love by Mutiullah Samim*/
-    @import url('https://fonts.googleapis.com/css?family=Numans');
-    html,body{
-      background-image: url('https://haycafe.vn/wp-content/uploads/2022/02/Hinh-nen-may-tinh-toi-gian.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 100%;
-      font-family: 'Numans', sans-serif;
+    <title>Title</title>
+    <style>.modal-header {
+        padding: 0;
     }
-    .container{
-      height: 100%;
-      align-content: center;
+    .modal-header .close {
+        padding: 10px 15px;
     }
-    .card{
-      height: 370px;
-      margin-top: auto;
-      margin-bottom: auto;
-      width: 400px;
-      background-color: rgba(0,0,0,0.5) !important;
+    .modal-header ul {
+        border: none;
     }
-    .social_icon span{
-      font-size: 60px;
-      margin-left: 10px;
-      color: #FFC312;
+    .modal-header ul li {
+        margin: 0;
     }
-    .social_icon span:hover{
-      color: white;
-      cursor: pointer;
+    .modal-header ul li a {
+        border: none;
+        border-radius: 0;
     }
-    .card-header h3{
-      color: white;
+    .modal-header ul li.active a {
+        color: #e12f27;
     }
-    .social_icon{
-      position: absolute;
-      right: 20px;
-      top: -45px;
+    .modal-header ul li a:hover {
+        border: none;
     }
-    .input-group-prepend span{
-      width: 50px;
-      background-color: #FFC312;
-      color: black;
-      border:0 !important;
+    .modal-header ul li a span {
+        margin-left: 10px;
     }
-    input:focus{
-      outline: 0   !important;
-      box-shadow: 0 0 0 0 !important;
+    .modal-body .form-group {
+        margin-bottom: 10px;
     }
-    .remember{
-      color: white;
-    }
-    .remember input
-    {
-      width: 20px;
-      height: 20px;
-      margin-left: 15px;
-      margin-right: 5px;
-    }
-    .login_btn{
-      color: black;
-      background-color: #FFC312;
-      width: 100px;
-    }
-    .login_btn:hover{
-      color: black;
-      background-color: white;
-    }
-    .links{
-      color: white;
-    }
-    .links a{
-      margin-left: 4px;
-    }
-  </style>
-
+    </style>
 </head>
 <body>
-<div class="container">
-  <div class="d-flex justify-content-center h-100">
-    <div class="card">
-      <div class="card-header">
-        <h3>Sign In</h3>
-        <div class="d-flex justify-content-end social_icon">
-          <span><i class="fab fa-facebook-square"></i></span>
-          <span><i class="fab fa-google-plus-square"></i></span>
-          <span><i class="fab fa-twitter-square"></i></span>
-        </div>
-      </div>
-      <div class="card-body">
-        <form action="/login" method="post">
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
-            </div>
-            <input type="text" class="form-control" name="username" placeholder="username">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-          </div>
-          <div class="input-group form-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
+<div class="container">
+    <div class="row">
+
+        <!-- Signin & Signup -->
+        <a class="btn btn-primary" href="#" data-toggle="modal" data-target=".login-register-form">
+            Login - Registration Modal
+        </a>
+
+        <!-- Login / Register Modal-->
+        <div class="modal fade login-register-form" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#login-form"> Login <span
+                                    class="glyphicon glyphicon-user"></span></a></li>
+                            <li><a data-toggle="tab" href="#registration-form"> Register <span
+                                    class="glyphicon glyphicon-pencil"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tab-content">
+                            <div id="login-form" class="tab-pane fade in active">
+                                <form action="/">
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                               name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Password:</label>
+                                        <input type="password" class="form-control" id="pwd"
+                                               placeholder="Enter password" name="pwd">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" name="remember"> Remember me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Login</button>
+                                </form>
+                            </div>
+                            <div id="registration-form" class="tab-pane fade">
+                                <form action="/">
+                                    <div class="form-group">
+                                        <label for="name">Your Name:</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                               name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newemail">Email:</label>
+                                        <input type="email" class="form-control" id="newemail"
+                                               placeholder="Enter new email" name="newemail">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newpwd">Password:</label>
+                                        <input type="password" class="form-control" id="newpwd"
+                                               placeholder="New password" name="newpwd">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Register</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--                                    <div class="modal-footer">-->
+                    <!--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    <!--                                    </div>-->
+                </div>
             </div>
-            <input type="password" class="form-control" placeholder="password" name="password">
-          </div>
-          <div class="row align-items-center remember">
-            <input type="checkbox">Remember Me
-          </div>
-          <h4 style="color: red">${mess}</h4>
-          <div class="form-group">
-            <input type="submit" value="Login" class="btn float-right login_btn">
-          </div>
-        </form>
-      </div>
-      <div class="card-footer">
-        <div class="d-flex justify-content-center links">
-          Don't have an account?<a href="#">Sign Up</a>
         </div>
-        <div class="d-flex justify-content-center">
-          <a href="#">Forgot your password?</a>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 </body>
 </html>

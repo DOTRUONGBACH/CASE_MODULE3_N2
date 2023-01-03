@@ -8,6 +8,6 @@
 <h1><%= "CASE MODULE 3 - NHOM 2" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="/hat">Link fullhd không che</a>
 </body>
 </html>
