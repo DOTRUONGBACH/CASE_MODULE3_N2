@@ -13,8 +13,9 @@ public class User {
     public User() {
     }
 
-    public User( String username, String password, String role, String fullName, int age, String phone, String email, int customerId) {
+    public User(int customerId, String username, String password, String role, String fullName, int age, String phone, String email) {
 
+        this.customerId = customerId;
         this.username = username;
         this.password = password;
         this.role = role;
@@ -22,9 +23,14 @@ public class User {
         this.age = age;
         this.phone = phone;
         this.email = email;
-        this.customerId = customerId;
     }
 
+    public int getCustomerId() {
+        return customerId;
+    }
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
     public String getUsername() {
         return username;
     }
@@ -79,13 +85,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
     }
 }

@@ -28,7 +28,7 @@ public class UserDao {
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int customerId = resultSet.getInt("customerId");
-                return new User( username, password, role, fullName, age, phone, email,customerId);
+                return new User(customerId, username, password, role, fullName, age, phone, email);
             }
         } catch (Exception e) {
             e.printStackTrace();
