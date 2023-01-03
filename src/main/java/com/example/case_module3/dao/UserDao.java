@@ -41,7 +41,7 @@ public class UserDao {
     }
 
     public void insert(User user){
-        String insertSql = "insert into User( id,  username,  password,  role,  fullName,  age,  phone,  email,  customerId) value (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertSql = "insert into User( customerId,  username,  password,  role,  fullName,  age,  phone,  email,  customerId) value (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
             preparedStatement.setInt(1, user.getCustomerId());
