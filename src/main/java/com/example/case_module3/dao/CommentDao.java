@@ -1,7 +1,6 @@
 package com.example.case_module3.dao;
 
 import com.example.case_module3.models.Comment;
-import com.example.case_module3.models.Hat;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +17,7 @@ public class CommentDao implements DaoInterface<Comment> {
 
     @Override
     public void insert(Comment comment) {
-        String insertSql = "insert into Comment(userName,commentDetail,hatId,star) value (?,?,?,?)";
+        String insertSql = "insert into Comment(userName, commentDetail, hatId, star) value (?, ?, ?, ?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
             preparedStatement.setString(1, comment.getUserName());
@@ -35,13 +34,14 @@ public class CommentDao implements DaoInterface<Comment> {
     @Override
     public boolean update(Comment comment) {
         String updateSql = "UPDATE from Comment\n"
-                + "Set userName=?,commentDetail = ?,hatId=?,star=?, where commentId = ?";
+                + "Set userName = ?, commentDetail = ?, hatId = ?, star = ?, where commentId = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setInt(5, comment.getCommentId());
-            preparedStatement.setString(1, comment.getCommentDetail());
-            preparedStatement.setInt(2, comment.getHatId());
-            preparedStatement.setString(3, comment.getStar());
+            preparedStatement.setString(1, comment.getUserName());
+            preparedStatement.setString(2, comment.getCommentDetail());
+            preparedStatement.setInt(3, comment.getHatId());
+            preparedStatement.setString(4, comment.getStar());
             return preparedStatement.execute();
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,7 +51,7 @@ public class CommentDao implements DaoInterface<Comment> {
 
     @Override
     public void delete(int id) {
-        String deleteSql = "delete FROM Comment where commentId = ? ";
+        String deleteSql = "delete FROM Comment where commentId = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
             preparedStatement.setInt(1, id);
@@ -75,7 +75,6 @@ public class CommentDao implements DaoInterface<Comment> {
                 int hatId = resultSet.getInt("hatId");
                 String star = resultSet.getString("star");
 
-
                 comments.add(new Comment(commentId, userName, commentDetail, hatId, star));
             }
         } catch (Exception e) {
@@ -86,7 +85,7 @@ public class CommentDao implements DaoInterface<Comment> {
 
     @Override
     public Comment selectById() {
-        String sql = "Select * from Comment where commentId=?";
+        String sql = "Select * from Comment where commentId = ?";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
@@ -101,7 +100,8 @@ public class CommentDao implements DaoInterface<Comment> {
         } catch (Exception e) {
             e.printStackTrace();
 
-        }return null;
+        }
+        return null;
     }
 
     @Override
