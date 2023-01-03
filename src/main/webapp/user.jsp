@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>User</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -63,11 +63,23 @@
                         <input type="search" id="search" placeholder="Search..."/>
                     </div>
                 </li>
-                <li class="nav-item" style="position: absolute; left: 82%">
-                    <div class="nav-link" href="#">Đăng ký</div>
+                <li class="nav-item" style="position: absolute; left: 75%">
+                    <div class="nav-link">
+                        <div class="dropdown">
+                            <div class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
+                                Hello...@gmail.com
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                                <li><a class="dropdown-item" href="#">Sửa thông tin</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item" style="position: absolute; left: 90%">
-                    <div class="nav-link" href="#">Đăng nhập</div>
+                    <div class="nav-link dropdown-toggle btn btn-secondary" href="#">Giỏ hàng</div>
                 </li>
             </ul>
         </div>
