@@ -236,3 +236,9 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 .carousel-item {
     height: 650px;
 }
+
+.wrapper1 {
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 200px 200px;
+}
