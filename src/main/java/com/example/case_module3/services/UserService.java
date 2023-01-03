@@ -8,12 +8,13 @@ import java.util.List;
 public class UserService {
     public static List<User> users = UserDao.getInstance().selectAcc();
 
-    public void Add(User user) {
+
+    public static void Add(User user) {
         UserDao.getInstance().insert(user);
-        users = (List<User>) UserDao.getInstance().selectAcc();
+        users = UserDao.getInstance().selectAcc();
     }
 
-    public void Delete(int id) {
+    public static void Delete(int id) {
         UserDao.getInstance().delete(id);
         users = UserDao.getInstance().selectAcc();
     }

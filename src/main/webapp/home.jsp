@@ -83,7 +83,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
@@ -102,7 +102,12 @@
         <strong>${note}</strong>
     </div>
 </c:if>
-
+<c:if test="${note2 != null}">
+<div class="alert alert-success alert-success">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>${note2}</strong>
+</div>
+</c:if>
 
 <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -136,7 +141,7 @@
         <div class="modal-content">
             <div class="container mt-3" style="height: 710px">
                 <h2>Đăng ký</h2>
-                <form action="/action_page.php">
+                <form action="/register" method="post">
                     <div class="mb-3 mt-3">
                         <label>User:</label>
                         <input type="text" class="form-control" placeholder="Enter username" name="username">
@@ -155,7 +160,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Number Phone:</label>
-                        <input type="text" class="form-control" placeholder="Enter number" name="number">
+                        <input type="text" class="form-control" placeholder="Enter number" name="phone">
                     </div>
                     <div class="mb-3">
                         <label>Email:</label>

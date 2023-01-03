@@ -87,7 +87,7 @@
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
               </ul>
             </div>
           </li>
@@ -109,7 +109,75 @@
 
   </div>
 </div>
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container mt-3" style="height: 310px">
+        <h2>Đăng nhập</h2>
+        <form action="/hat" method="post">
+          <div class="mb-3 mt-3">
+            <label>User:</label>
+            <input type="text" class="form-control" placeholder="Enter username" name="username">
+          </div>
+          <div class="mb-3">
+            <label>Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="password">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="text-align: right">Đăng nhập</button>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="modal" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container mt-3" style="height: 710px">
+        <h2>Đăng ký</h2>
+        <form action="/action_page.php">
+          <div class="mb-3 mt-3">
+            <label>User:</label>
+            <input type="text" class="form-control" placeholder="Enter username" name="username">
+          </div>
+          <div class="mb-3">
+            <label>Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="password">
+          </div>
+          <div class="mb-3">
+            <label>Full name:</label>
+            <input type="text" class="form-control" placeholder="Enter full name" name="fullName">
+          </div>
+          <div class="mb-3">
+            <label>Age:</label>
+            <input type="number" class="form-control" placeholder="Enter age" name="age">
+          </div>
+          <div class="mb-3">
+            <label>Number Phone:</label>
+            <input type="text" class="form-control" placeholder="Enter number" name="number">
+          </div>
+          <div class="mb-3">
+            <label>Email:</label>
+            <input type="text" class="form-control" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="text-align: right">Đăng ký</button>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="container-fluid" style="margin-top: 2%">

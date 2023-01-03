@@ -31,8 +31,8 @@ public class UserDao {
                 String phone = resultSet.getString("phone");
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
-                int customerId = resultSet.getInt("customerId");
-                user.add( new User(customerId, username, password, fullName, age, phone, email));
+
+                user.add( new User( username, password, fullName, age, phone, email));
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -41,8 +41,8 @@ public class UserDao {
 
     }
 
-    public void insert(User user){
-        String insertSql = "insert into User(username,  password,  fullName,  age,  phone,  email) value (?, ?, ?, ?, ?, ?, ?)";
+    public boolean insert(User user){
+        String insertSql = "INSERT INTO `casemodule.n2`.`user` (`username`, `password`, `fullName`, `age`, `phone`, `email`) VALUES (?,?,?,?,?,?);";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
             preparedStatement.setString(1, user.getUsername());
@@ -51,11 +51,11 @@ public class UserDao {
             preparedStatement.setInt(4, user.getAge());
             preparedStatement.setString(5, user.getPhone());
             preparedStatement.setString(6, user.getEmail());
-
+            return preparedStatement.execute();
 
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }return false;
     }
 
     public boolean update(User user) {
