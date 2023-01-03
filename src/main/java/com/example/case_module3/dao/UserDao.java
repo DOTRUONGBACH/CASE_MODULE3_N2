@@ -6,6 +6,9 @@ import com.example.case_module3.models.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDao {
     static Connection connection = ConnectionMySql.getConnection();
@@ -13,29 +16,30 @@ public class UserDao {
         return new UserDao();
     }
 
-    public User selectAcc(String username, String password) {
-
-        String sql = " select * from account where username = ? and password = ?";
-        try (Connection connection = ConnectionMySql.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, username);
-            preparedStatement.setString(2, password);
-            ResultSet resultSet = preparedStatement.executeQuery();
+    public List<User> selectAcc() {
+        List<User> user = new ArrayList<>();
+        String sql = "Select * from User";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
-
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
                 String role = resultSet.getString("role");
                 String fullName = resultSet.getString("fullname");
                 String phone = resultSet.getString("phone");
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int customerId = resultSet.getInt("customerId");
-                return new User(customerId, username, password, role, fullName, age, phone, email);
+                user.add( new User(customerId, username, password, role, fullName, age, phone, email));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return null;
+        return user;
+
     }
+
     public void insert(User user){
         String insertSql = "insert into User( id,  username,  password,  role,  fullName,  age,  phone,  email,  customerId) value (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try{
