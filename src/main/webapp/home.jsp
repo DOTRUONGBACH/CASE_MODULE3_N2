@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css'>
     <link href="css/home.css" rel="stylesheet">
-    <link href="css/bootstrap.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <nav class="navbar navbar-expand-sm navbar-dark"
@@ -48,14 +48,8 @@
                         <li><a class="dropdown-item" href="#">Mũ Cói</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Trẻ em</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mũ lưỡi trai</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ len</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ Jacket</a></li>
-                        <li><a class="dropdown-item" href="#">Mũ thời trang</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trẻ em</a>
                 </li>
                 <li class="nav-item box" style="position: relative; left: 15px; top: -5px">
                     <div class="container-2">
@@ -64,10 +58,10 @@
                     </div>
                 </li>
                 <li class="nav-item" style="position: absolute; left: 82%">
-                    <div class="nav-link" href="#">Đăng ký</div>
+                    <div class="nav-link btn btn-secondary" href="#">Đăng ký</div>
                 </li>
                 <li class="nav-item" style="position: absolute; left: 90%">
-                    <div class="nav-link" href="/Login.jsp">Đăng nhập</div>
+                    <a class="nav-link btn btn-secondary" href="Login.jsp">Đăng nhập</a>
                 </li>
             </ul>
         </div>
