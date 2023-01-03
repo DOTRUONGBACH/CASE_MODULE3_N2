@@ -21,10 +21,10 @@ public class HatStyleSerrvlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/hattype.jsp");
         int id = Integer.parseInt(req.getParameter("id"));
 //        List<Hattype> hattypes = HattypeService.hattypes;
-        HttpSession session = req.getSession();
+//        HttpSession session = req.getSession();
         Hattype hattype = HattypeDao.getInstance().selectById(id);
         String name = hattype.getTypeName();
-        session.setAttribute("hattype",name);
+        req.setAttribute("hattype",name);
         dispatcher.forward(req, resp);
     }
 }
