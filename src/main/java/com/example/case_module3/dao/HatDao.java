@@ -1,6 +1,5 @@
 package com.example.case_module3.dao;
 
-import com.example.case_module3.models.Comment;
 import com.example.case_module3.models.Hat;
 
 import java.sql.*;
@@ -17,8 +16,8 @@ public class HatDao implements DaoInterface<Hat> {
 
     @Override
     public void insert(Hat hat) {
-        String insertSql = "insert into Hat(hatName,img,listImg,sellPrice,inputPrice,promotionPrice,quantity," +
-                "description,detail) value (?,?,?,?,?,?,?,?,?)";
+        String insertSql = "insert into Hat(hatName, img, listImg, sellPrice, inputPrice, promotionPrice, quantity," +
+                "description, detail) value (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
             preparedStatement.setString(1, hat.getHatName());
@@ -34,14 +33,12 @@ public class HatDao implements DaoInterface<Hat> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     @Override
     public boolean update(Hat hat) {
         String updateSql = "UPDATE from Hat\n"
-                + "Set hatName=?,img = ?,listImg=?,sellPrice=?,inputPrice=?,promotionPrice=?,quantity=?,description=?,detail =?" +
+                + "Set hatName = ?, img = ?, listImg = ?, sellPrice = ?, inputPrice = ?, promotionPrice = ?, quantity = ?, description = ?, detail = ?" +
                 "where hatId = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
@@ -64,7 +61,7 @@ public class HatDao implements DaoInterface<Hat> {
 
     @Override
     public void delete(int id) {
-        String deleteSql = "delete FROM Hat where hatId = ? ";
+        String deleteSql = "delete FROM Hat where hatId = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
             preparedStatement.setInt(1, id);
@@ -72,7 +69,6 @@ public class HatDao implements DaoInterface<Hat> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -83,7 +79,7 @@ public class HatDao implements DaoInterface<Hat> {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
-                int hatID = resultSet.getInt("hatID");
+                int hatId = resultSet.getInt("hatId");
                 String hatName = resultSet.getString("hatName");
                 String img = resultSet.getString("img");
                 List<String> listImg = Collections.singletonList(resultSet.getString("listImg"));
@@ -96,7 +92,7 @@ public class HatDao implements DaoInterface<Hat> {
                 int idHattype = resultSet.getInt("idHattype");
                 int idCatagory = resultSet.getInt("idCatagory");
 
-                hats.add(new Hat(hatID, hatName, true, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
+                hats.add(new Hat(hatId, hatName, true, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
                         description, detail, idHattype, idCatagory));
             }
         } catch (Exception e) {
@@ -107,12 +103,12 @@ public class HatDao implements DaoInterface<Hat> {
 
     @Override
     public Hat selectById() {
-        String sql = "Select * from Hat where hatId=?";
+        String sql = "Select * from Hat where hatId = ?";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
-            int hatID = resultSet.getInt("hatID");
+            int hatId = resultSet.getInt("hatId");
             String hatName = resultSet.getString("hatName");
             String img = resultSet.getString("img");
             List<String> listImg = Collections.singletonList(resultSet.getString("listImg"));
@@ -125,7 +121,7 @@ public class HatDao implements DaoInterface<Hat> {
             int idHattype = resultSet.getInt("idHattype");
             int idCatagory = resultSet.getInt("idCatagory");
 
-            return new Hat(hatID, hatName, true, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
+            return new Hat(hatId, hatName, true, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
                     description, detail, idHattype, idCatagory);
 
         } catch (Exception e) {
