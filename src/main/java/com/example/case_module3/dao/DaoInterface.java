@@ -1,6 +1,6 @@
 package com.example.case_module3.dao;
 
-import com.example.case_module3.models.Hat;
+import com.example.case_module3.models.Comment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public interface DaoInterface<T> {
 
     public void delete(int id);
 
-    public List<Hat> selectAll();
+    public List<T> selectAll();
 
     public T selectById();
 

@@ -1,10 +1,9 @@
 package com.example.case_module3.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Hat {
-private int hatID;
+private int hatId;
 private String hatName;
 private boolean hatStatus;
 private String img;
@@ -21,8 +20,8 @@ private int idCatagory;
     public Hat() {
     }
 
-    public Hat(int hatID, String hatName, boolean hatStatus, String img, List<String> listImg, double sellPrice, double inputPrice, double promotionPrice, int quantity, String description, String detail, int idHattype, int idCatagory) {
-        this.hatID = hatID;
+    public Hat(int hatId, String hatName, boolean hatStatus, String img, List<String> listImg, double sellPrice, double inputPrice, double promotionPrice, int quantity, String description, String detail, int idHattype, int idCatagory) {
+        this.hatId = hatId;
         this.hatName = hatName;
         this.hatStatus = hatStatus;
         this.img = img;
@@ -37,12 +36,12 @@ private int idCatagory;
         this.idCatagory = idCatagory;
     }
 
-    public int getHatID() {
-        return hatID;
+    public int getHatId() {
+        return hatId;
     }
 
-    public void setHatID(int hatID) {
-        this.hatID = hatID;
+    public void setHatId(int hatId) {
+        this.hatId = hatId;
     }
 
     public String getHatName() {

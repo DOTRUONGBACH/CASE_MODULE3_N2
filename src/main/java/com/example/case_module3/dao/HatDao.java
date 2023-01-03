@@ -1,5 +1,6 @@
 package com.example.case_module3.dao;
 
+import com.example.case_module3.models.Comment;
 import com.example.case_module3.models.Hat;
 
 import java.sql.*;
@@ -41,10 +42,10 @@ public class HatDao implements DaoInterface<Hat> {
     public boolean update(Hat hat) {
         String updateSql = "UPDATE from Hat\n"
                 + "Set hatName=?,img = ?,listImg=?,sellPrice=?,inputPrice=?,promotionPrice=?,quantity=?,description=?,detail =?" +
-                "where hatID = ?";
+                "where hatId = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
-            preparedStatement.setInt(10, hat.getHatID());
+            preparedStatement.setInt(10, hat.getHatId());
             preparedStatement.setString(1, hat.getHatName());
             preparedStatement.setString(2, hat.getImg());
             preparedStatement.setString(3, String.valueOf(hat.getListImg()));
@@ -63,7 +64,7 @@ public class HatDao implements DaoInterface<Hat> {
 
     @Override
     public void delete(int id) {
-        String deleteSql = "delete FROM Hat where hatID = ? ";
+        String deleteSql = "delete FROM Hat where hatId = ? ";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
             preparedStatement.setInt(1, id);
@@ -106,7 +107,7 @@ public class HatDao implements DaoInterface<Hat> {
 
     @Override
     public Hat selectById() {
-        String sql = "Select * from Hat where hatID=?";
+        String sql = "Select * from Hat where hatId=?";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
@@ -131,7 +132,6 @@ public class HatDao implements DaoInterface<Hat> {
             e.printStackTrace();
             return null;
         }
-
     }
 
     @Override
