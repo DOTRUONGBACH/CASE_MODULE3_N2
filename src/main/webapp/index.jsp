@@ -16,6 +16,8 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css'>
     <link href="css/home.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/imgEffect.css" rel="stylesheet">
+    <link href="js/imgEffect.js" rel="script">
 </head>
 
 <nav class="navbar navbar-expand-sm navbar-dark"
@@ -49,7 +51,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Trẻ em</a>
+                    <a class="nav-link" href="/admin.jsp">Trẻ em</a>
                 </li>
                 <li class="nav-item box" style="position: relative; left: 15px; top: -5px">
                     <div class="container-2">
@@ -112,13 +114,31 @@
     </div>
 </div>
 
-<div class="container-fluid" style="margin-top: 2%; text-align: center">
-    <div>
-        <img class="col-md-4" src="img/banner33.jpg" style="width: 400px; margin-top: 2%">
-        <img class="col-md-4" src="img/banner11.jpg" style="width: 400px; margin-top: 2%">
-        <img class="col-md-4" src="img/banner44.jpg" style="width: 400px; margin-top: 2%">
+<div class="container-fluid center-parent center-me" style="margin-top: 2%; text-align: center; display: inline-flex">
+    <figure class="snip1104 blue col-md-4">
+        <img src="img/banner33.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+        <figcaption>
+            <h2>Sale <span> %</span></h2>
+        </figcaption>
+        <a href="#"></a>
+    </figure>
+    <figure class="snip1104 blue col-md-4" >
+        <img src="img/banner11.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+        <figcaption>
+            <h2>Sale <span> %</span></h2>
+        </figcaption>
+        <a href="#"></a>
+    </figure>
+    <figure class="snip1104 blue col-md-4" >
+        <img src="img/banner44.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+        <figcaption>
+            <h2>Sale <span> %</span></h2>
+        </figcaption>
+        <a href="#"></a>
+    </figure>
     </div>
 </div>
+
 
 <div class="container-fluid" style="margin-top: 2%">
     <div style="text-align: center">
@@ -128,23 +148,13 @@
 
 <div class="container-fluid" style="margin-top: 2%">
     <div style="text-align: center">
-        <img class="col-md-3" src="img/banner33.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner11.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner44.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner22.jpg" style="width: 250px; margin-top: 2%">
-        <img class="col-md-3" src="img/banner33.jpg" style="width: 250px; margin-top: 2%">
-    </div>
-</div>
-
-<div class="container-fluid" style="margin-top: 2%">
-    <div style="text-align: center">
         <h4 class="btn btn-primary">Xem thêm</h4>
     </div>
 </div>
 
-<div class="grid container-fluid">
-    <figure class="effect-zoe">
-        <img src="https://tympanus.net/Development/HoverEffectIdeas/img/25.jpg" alt="img25"/>
+<div class="grid container-fluid" style="text-align: center">
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner33.jpg" alt="img25" style="width: 250px;"/>
         <figcaption>
             <h2>69.000đ<span></span></h2>
             <p class="icon-links">
@@ -155,10 +165,82 @@
             <p class="description"></p>
         </figcaption>
     </figure>
-    <figure class="effect-zoe">
-        <img src="https://tympanus.net/Development/HoverEffectIdeas/img/26.jpg" alt="img26"/>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner22.jpg" alt="img25" style="width: 250px;"/>
         <figcaption>
-            <h2>99.000đ<span></span></h2>
+            <h2>69.000đ<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner44.jpg" alt="img25" style="width: 250px;"/>
+        <figcaption>
+            <h2>69.000đ<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner11.jpg" style="width: 250px;"/>
+        <figcaption>
+            <h2>69.000đ<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner44.jpg" alt="img25" style="width: 250px;"/>
+        <figcaption>
+            <h2>69.000đ<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner11.jpg" style="width: 250px;"/>
+        <figcaption>
+            <h2>69.000đ<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner33.jpg" alt="img25" style="width: 250px;"/>
+        <figcaption>
+            <h2>69.000đ<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+    <figure class="effect-zoe figure col-md-3">
+        <img src="img/banner11.jpg" alt="img25" style="width: 250px;"/>
+        <figcaption>
+            <h2>69.000đ<span></span></h2>
             <p class="icon-links">
                 <a href="#"><span class="icon-heart"></span></a>
                 <a href="#"><span class="icon-eye"></span></a>

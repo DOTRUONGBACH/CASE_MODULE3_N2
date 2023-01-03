@@ -1,8 +1,6 @@
 .grid {
-    position: relative;
     margin: 0 auto;
     padding: 1em 0 4em;
-    max-width: 1000px;
     list-style: none;
     text-align: center;
 }
@@ -10,14 +8,12 @@
 /* Common style */
 .grid figure {
     position: relative;
-    float: left;
+    /*float: left;*/
     overflow: hidden;
     margin: 10px 1%;
-    min-width: 320px;
-    max-width: 480px;
+    min-width: 250px;
+    max-width: 250px;
     max-height: 360px;
-    width: 48%;
-    background: #3085a3;
     text-align: center;
     cursor: pointer;
 }
@@ -27,7 +23,6 @@
     display: block;
     min-height: 100%;
     max-width: 100%;
-    opacity: 0.8;
 }
 
 .grid figure figcaption {
@@ -159,7 +154,7 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 }
 
 
-/* thanh tìm kiếm */
+/* thanh tÃ¬m kiáº¿m */
 .box{
     width: 500px;
 }
