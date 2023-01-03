@@ -41,18 +41,17 @@ public class UserDao {
     }
 
     public void insert(User user){
-        String insertSql = "insert into User( customerId,  username,  password,  role,  fullName,  age,  phone,  email,  customerId) value (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertSql = "insert into User(username,  password,  role,  fullName,  age,  phone,  email) value (?, ?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
-            preparedStatement.setInt(1, user.getCustomerId());
-            preparedStatement.setString(2, user.getUsername());
-            preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setString(4, user.getRole());
-            preparedStatement.setString(5, user.getFullName());
-            preparedStatement.setInt(6, user.getAge());
-            preparedStatement.setString(7, user.getPhone());
-            preparedStatement.setString(8, user.getEmail());
-            preparedStatement.setInt(9, user.getCustomerId());
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getRole());
+            preparedStatement.setString(4, user.getFullName());
+            preparedStatement.setInt(5, user.getAge());
+            preparedStatement.setString(6, user.getPhone());
+            preparedStatement.setString(7, user.getEmail());
+
 
         }catch (Exception e){
             e.printStackTrace();
@@ -61,7 +60,7 @@ public class UserDao {
 
     public boolean update(User user) {
         String updateSql = "UPDATE from User/n"
-                +"Set id = ?,  username= ?,  password= ?,  role= ?,  fullName= ?,  age= ?,  phone= ?,  email= ?,  customerId= ?";
+                +"Set customerId= ?,  username= ?,  password= ?,  role= ?,  fullName= ?,  age= ?,  phone= ?,  email= ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setInt(1, user.getCustomerId());
@@ -72,7 +71,6 @@ public class UserDao {
             preparedStatement.setInt(6, user.getAge());
             preparedStatement.setString(7, user.getPhone());
             preparedStatement.setString(8, user.getEmail());
-            preparedStatement.setInt(9, user.getCustomerId());
             return preparedStatement.execute();
         } catch (Exception e){
             e.printStackTrace();
@@ -81,7 +79,7 @@ public class UserDao {
     }
 
     public void delete(int id) {
-        String deleteSql = "delete FROM User where Id = ?";
+        String deleteSql = "delete FROM User where customerId = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
             preparedStatement.setInt(1, id);
