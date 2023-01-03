@@ -3,7 +3,6 @@ public class User {
     private int customerId;
     private String username;
     private String password;
-    private String role;
     private String fullName;
     private int age;
     private String phone;
@@ -13,11 +12,10 @@ public class User {
     public User() {
     }
 
-    public User(  int customerId,String username, String password, String role, String fullName, int age, String phone, String email) {
+    public User(  int customerId,String username, String password, String fullName, int age, String phone, String email) {
 
         this.username = username;
         this.password = password;
-        this.role = role;
         this.fullName = fullName;
         this.age = age;
         this.phone = phone;
@@ -41,13 +39,8 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
-    }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+
 
     public String getFullName() {
         return fullName;

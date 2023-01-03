@@ -16,6 +16,8 @@ public class UserDao {
         return new UserDao();
     }
 
+
+
     public List<User> selectAcc() {
         List<User> user = new ArrayList<>();
         String sql = "Select * from User";
@@ -25,13 +27,12 @@ public class UserDao {
             while (resultSet.next()) {
                 String username = resultSet.getString("username");
                 String password = resultSet.getString("password");
-                String role = resultSet.getString("role");
                 String fullName = resultSet.getString("fullname");
                 String phone = resultSet.getString("phone");
                 String email = resultSet.getString("email");
                 int age = resultSet.getInt("age");
                 int customerId = resultSet.getInt("customerId");
-                user.add( new User(customerId, username, password, role, fullName, age, phone, email));
+                user.add( new User(customerId, username, password, fullName, age, phone, email));
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -41,16 +42,15 @@ public class UserDao {
     }
 
     public void insert(User user){
-        String insertSql = "insert into User(username,  password,  role,  fullName,  age,  phone,  email) value (?, ?, ?, ?, ?, ?, ?)";
+        String insertSql = "insert into User(username,  password,  fullName,  age,  phone,  email) value (?, ?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setString(3, user.getRole());
-            preparedStatement.setString(4, user.getFullName());
-            preparedStatement.setInt(5, user.getAge());
-            preparedStatement.setString(6, user.getPhone());
-            preparedStatement.setString(7, user.getEmail());
+            preparedStatement.setString(3, user.getFullName());
+            preparedStatement.setInt(4, user.getAge());
+            preparedStatement.setString(5, user.getPhone());
+            preparedStatement.setString(6, user.getEmail());
 
 
         }catch (Exception e){
@@ -60,17 +60,16 @@ public class UserDao {
 
     public boolean update(User user) {
         String updateSql = "UPDATE from User/n"
-                +"Set customerId= ?,  username= ?,  password= ?,  role= ?,  fullName= ?,  age= ?,  phone= ?,  email= ?";
+                +"Set customerId= ?,  username= ?,  password= ?,  fullName= ?,  age= ?,  phone= ?,  email= ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
             preparedStatement.setInt(1, user.getCustomerId());
             preparedStatement.setString(2, user.getUsername());
             preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setString(4, user.getRole());
-            preparedStatement.setString(5, user.getFullName());
-            preparedStatement.setInt(6, user.getAge());
-            preparedStatement.setString(7, user.getPhone());
-            preparedStatement.setString(8, user.getEmail());
+            preparedStatement.setString(4, user.getFullName());
+            preparedStatement.setInt(5, user.getAge());
+            preparedStatement.setString(6, user.getPhone());
+            preparedStatement.setString(7, user.getEmail());
             return preparedStatement.execute();
         } catch (Exception e){
             e.printStackTrace();

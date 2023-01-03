@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,16 +70,23 @@
         </div>
     </div>
 </nav>
+<c:if test="${note != null}">
+    <div class="alert alert-warning alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>${note}</strong>
+    </div>
+</c:if>
+
 
 <div class="modal" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="container mt-3" style="height: 310px">
                 <h2>Đăng nhập</h2>
-                <form action="/action_page.php">
+                <form action="/hat" method="post">
                     <div class="mb-3 mt-3">
                         <label>User:</label>
-                        <input type="email" class="form-control" placeholder="Enter username" name="username">
+                        <input type="text" class="form-control" placeholder="Enter username" name="username">
                     </div>
                     <div class="mb-3">
                         <label>Password:</label>
