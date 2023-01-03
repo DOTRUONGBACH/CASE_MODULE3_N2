@@ -79,7 +79,7 @@ public class HattypeDao implements DaoInterface<Hattype> {
 
     @Override
     public Hattype selectById(int id) {
-        String sql = "Select * from Hattype where idHattype=?";
+        String sql = "Select * from Hattype where idHattype="+id;
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);

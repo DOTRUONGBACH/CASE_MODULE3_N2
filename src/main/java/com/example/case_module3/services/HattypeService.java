@@ -23,7 +23,5 @@ public class HattypeService {
         hattypes = HattypeDao.getInstance().selectAll();
     }
 
-//    public static Hattype selectById() {
-//        return HattypeDao.getInstance().selectById(selectById());
-//    }
+
 }

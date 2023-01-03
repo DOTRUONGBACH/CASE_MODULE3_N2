@@ -49,7 +49,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nữ</a>
                     <ul class="dropdown-menu">
                         <c:forEach var="p" items="${hattype}">
-                            <li><a class="dropdown-item" href="#">${p.typeName}</a></li>
+                            <li><a class="dropdown-item" href="/hatstyle?id=${p.idHattype}">${p.typeName}</a></li>
                         </c:forEach>
                     </ul>
                 </li>
@@ -75,7 +75,7 @@
                     <li class="nav-item" style="position: absolute; left: 75%">
                         <div class="dropdown">
                             <div class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
-                                Hello...@gmail.com
+                                Hello ${username}
                             </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Thông tin</a></li>
