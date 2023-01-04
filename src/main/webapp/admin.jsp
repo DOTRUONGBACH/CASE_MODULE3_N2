@@ -86,10 +86,14 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
   <div class="offcanvas-body">
-    <p href="">Thêm sản phẩm.</p>
-    <p href="">Sửa sản phẩm.</p>
-    <p href="">Xóa sản phẩm.</p>
-    <button class="btn btn-secondary" type="button">A Button</button>
+    <h4>Sản phẩm</h4>
+    <p class="btn btn-success" href="">Thêm sản phẩm.</p> <br>
+    <p class="btn btn-warning" href="">Sửa sản phẩm.</p> <br>
+    <p class="btn btn-danger" href="">Xóa sản phẩm.</p> <br>
+    <hr>
+    <h4>Tài khoản</h4>
+    <p class="btn btn-success">Tìm kiếm tài khoản</p>
+    <p class="btn btn-danger" href="">Xóa tài khoản khách</p>
   </div>
 </div>
 

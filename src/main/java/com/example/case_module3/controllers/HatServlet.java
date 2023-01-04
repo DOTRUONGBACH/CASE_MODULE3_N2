@@ -1,6 +1,7 @@
 package com.example.case_module3.controllers;
 
 import com.example.case_module3.dao.UserDao;
+import com.example.case_module3.models.Hat;
 import com.example.case_module3.models.Hattype;
 import com.example.case_module3.models.User;
 import com.example.case_module3.services.HatService;
@@ -24,7 +25,9 @@ public class HatServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
 
         List<Hattype> hattypes = HattypeService.hattypes;
+        List<Hat> hats = HatService.hats;
         req.setAttribute("hattype", hattypes);
+        req.setAttribute("hats", hats);
         dispatcher.forward(req, resp);
     }
 
@@ -35,7 +38,7 @@ public class HatServlet extends HttpServlet {
 
         List<User> users = UserDao.getInstance().selectAcc();
         List<Hattype> hattypes = HattypeService.hattypes;
-
+        List<Hat> hats = HatService.hats;
         HttpSession session = req.getSession();
         RequestDispatcher dispatcher;
         for (int i = 0; i < users.size(); i++) {
@@ -49,6 +52,7 @@ public class HatServlet extends HttpServlet {
 
             session.setAttribute("username", users.get(i).getUsername());
             req.setAttribute("hattype", hattypes);
+            req.setAttribute("hats", hats);
             //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
             dispatcher.forward(req, resp);
             return;
