@@ -193,16 +193,16 @@
     <!-- The slideshow/carousel -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="imghat/MJNA01.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+            <img src="https://munonsaigon.com/wp-content/uploads/2016/03/BANNER-MAY-NON-9.jpg" alt="Los Angeles" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="imghat/MCNA01.jpg" alt="Chicago" class="d-block" style="width:100%">
+            <img src="https://maynon.net/wp-content/uploads/2020/10/may-non-15a74bad482a58_thumb900.jpg" alt="Chicago" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="imghat/LCNU01.jpg" alt="New York" class="d-block" style="width:100%">
+            <img src="https://munonsaigon.com/wp-content/uploads/2016/03/BANNER-MAY-NON-9.jpg" alt="New York" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="imghat/MJNA01.jpg" alt="New York" class="d-block" style="width:100%">
+            <img src="https://munonsaigon.com/wp-content/uploads/2016/03/BANNER-MAY-NON-9.jpg" alt="New York" class="d-block" style="width:100%">
         </div>
     </div>
 

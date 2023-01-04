@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+table {
+    border-radius: 6px;
+    border-color: #1d2124;
+}
+
+tbody {
+    text-align: center;
+    background-color: beige;
+}
+
+input {
+    margin: 10px;
+}

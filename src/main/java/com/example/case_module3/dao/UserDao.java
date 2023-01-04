@@ -42,7 +42,7 @@ public class UserDao {
     }
 
     public boolean insert(User user){
-        String insertSql = "INSERT INTO `casemodule.n2`.`user` (`username`, `password`, `fullName`, `age`, `phone`, `email`) VALUES (?,?,?,?,?,?);";
+        String insertSql = "INSERT INTO `md3`.`user` (`username`, `password`, `fullName`, `age`, `phone`, `email`) VALUES (?,?,?,?,?,?);";
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
             preparedStatement.setString(1, user.getUsername());
