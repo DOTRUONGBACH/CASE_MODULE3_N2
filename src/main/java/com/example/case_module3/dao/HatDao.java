@@ -62,9 +62,20 @@ public class HatDao implements DaoInterface<Hat> {
 
     @Override
     public void delete(int id) {
+        String deleteOrderDetails = "delete FROM orderdetail where hatId = ?";
+        String deleteComment = "delete FROM comment where hatId = ?";
         String deleteSql = "delete FROM Hat where hatId = ?";
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(deleteSql);
+            //delete order detail
+            PreparedStatement preparedStatement = connection.prepareStatement(deleteOrderDetails);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            //delete comment
+            preparedStatement = connection.prepareStatement(deleteComment);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            //delete hat by id
+            preparedStatement = connection.prepareStatement(deleteSql);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (Exception e) {
@@ -93,7 +104,7 @@ public class HatDao implements DaoInterface<Hat> {
                 int idHattype = resultSet.getInt("idHattype");
                 int idCatagory = resultSet.getInt("idCatagory");
 
-                hats.add(new Hat(hatId, hatName, true, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
+                hats.add(new Hat(hatId, hatName, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
                         description, detail, idHattype, idCatagory));
             }
         } catch (Exception e) {
@@ -124,7 +135,7 @@ public class HatDao implements DaoInterface<Hat> {
             int idHattype = resultSet.getInt("idHattype");
             int idCatagory = resultSet.getInt("idCatagory");
 
-            return new Hat(hatId, hatName, true, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
+            return new Hat(hatId, hatName, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
                     description, detail, idHattype, idCatagory);
 
         } catch (Exception e) {

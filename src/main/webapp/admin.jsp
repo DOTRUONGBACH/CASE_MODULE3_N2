@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +69,7 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+              <li><a class="dropdown-item" href="/logout">Đăng xuất</a></li>
             </ul>
           </div>
         </li>
@@ -79,6 +80,12 @@
     </div>
   </div>
 </nav>
+<c:if test="${note3 != null && note3 != ''}">
+  <div class="alert alert-success alert-success">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>${note3}</strong>
+  </div>
+</c:if>
 
 <div class="offcanvas offcanvas-start" id="demo">
   <div class="offcanvas-header">
@@ -87,9 +94,9 @@
   </div>
   <div class="offcanvas-body">
     <h4>Sản phẩm</h4>
-    <p class="btn btn-success" href="">Thêm sản phẩm.</p> <br>
-    <p class="btn btn-warning" href="">Sửa sản phẩm.</p> <br>
-    <p class="btn btn-danger" href="">Xóa sản phẩm.</p> <br>
+    <a class="btn btn-success" href="/creat">Thêm sản phẩm.</a> <br>
+    <a class="btn btn-warning" href="">Sửa sản phẩm.</a> <br>
+    <a class="btn btn-danger" href="/delete">Xóa sản phẩm.</a> <br>
     <hr>
     <h4>Tài khoản</h4>
     <p class="btn btn-success">Tìm kiếm tài khoản</p>

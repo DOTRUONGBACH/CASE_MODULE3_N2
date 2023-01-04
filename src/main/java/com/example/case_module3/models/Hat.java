@@ -1,11 +1,11 @@
 package com.example.case_module3.models;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Hat {
 private int hatId;
 private String hatName;
-private boolean hatStatus;
 private String img;
 private List<String> listImg = null;
 private double sellPrice;
@@ -20,10 +20,9 @@ private int idCatagory;
     public Hat() {
     }
 
-    public Hat(int hatId, String hatName, boolean hatStatus, String img, List<String> listImg, double sellPrice, double inputPrice, double promotionPrice, int quantity, String description, String detail, int idHattype, int idCatagory) {
+    public Hat(int hatId, String hatName, String img, List<String> listImg, double sellPrice, double inputPrice, double promotionPrice, int quantity, String description, String detail, int idHattype, int idCatagory) {
         this.hatId = hatId;
         this.hatName = hatName;
-        this.hatStatus = hatStatus;
         this.img = img;
         this.listImg = listImg;
         this.sellPrice = sellPrice;
@@ -34,6 +33,20 @@ private int idCatagory;
         this.detail = detail;
         this.idHattype = idHattype;
         this.idCatagory = idCatagory;
+    }
+
+    public Hat(String hatName, String img, String listImg, double sellPrice, double inputPrice, double promotionPrice, int quantity, String description, String detail) {
+
+        this.hatName = hatName;
+        this.img = img;
+        this.listImg = Collections.singletonList(listImg);
+        this.sellPrice = sellPrice;
+        this.inputPrice = inputPrice;
+        this.promotionPrice = promotionPrice;
+        this.quantity = quantity;
+        this.description = description;
+        this.detail = detail;
+
     }
 
     public int getHatId() {
@@ -50,14 +63,6 @@ private int idCatagory;
 
     public void setHatName(String hatName) {
         this.hatName = hatName;
-    }
-
-    public boolean isHatStatus() {
-        return hatStatus;
-    }
-
-    public void setHatStatus(boolean hatStatus) {
-        this.hatStatus = hatStatus;
     }
 
     public String getImg() {

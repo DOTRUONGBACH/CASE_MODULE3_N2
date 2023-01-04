@@ -23,8 +23,9 @@ public class HatServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+        HattypeService hattypeService = new HattypeService();
 
-        List<Hattype> hattypes = HattypeService.hattypes;
+        List<Hattype> hattypes = hattypeService.hattypes;
         List<Hat> hats = HatService.hats;
         req.setAttribute("hattype", hattypes);
         req.setAttribute("hats", hats);
@@ -35,9 +36,9 @@ public class HatServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-
+        HattypeService hattypeService = new HattypeService();
         List<User> users = UserDao.getInstance().selectAcc();
-        List<Hattype> hattypes = HattypeService.hattypes;
+        List<Hattype> hattypes = hattypeService.hattypes;
         List<Hat> hats = HatService.hats;
         HttpSession session = req.getSession();
         RequestDispatcher dispatcher;

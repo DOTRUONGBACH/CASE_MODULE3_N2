@@ -3,24 +3,30 @@ package com.example.case_module3.services;
 import com.example.case_module3.dao.HattypeDao;
 import com.example.case_module3.models.Hattype;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HattypeService {
-    public static List<Hattype> hattypes = HattypeDao.getInstance().selectAll();
+    HattypeDao hattypeDao = new HattypeDao();
+    public List<Hattype> hattypes = new ArrayList<>();
+
+    public HattypeService() {
+        this.hattypes = hattypeDao.selectAll();
+    }
 
     public void Add(Hattype hattype) {
-        HattypeDao.getInstance().insert(hattype);
-        hattypes = HattypeDao.getInstance().selectAll();
+        hattypeDao.insert(hattype);
+        hattypes = hattypeDao.selectAll();
     }
 
     public void Delete(int id) {
-        HattypeDao.getInstance().delete(id);
-        hattypes = HattypeDao.getInstance().selectAll();
+        hattypeDao.delete(id);
+        hattypes = hattypeDao.selectAll();
     }
 
     public void Edit() {
-//        HattypeDao.getInstance().update(HattypeDao.getInstance().selectById());
-        hattypes = HattypeDao.getInstance().selectAll();
+//        hattypeDao.update(hattypeDao.selectById());
+        hattypes = hattypeDao.selectAll();
     }
 
 

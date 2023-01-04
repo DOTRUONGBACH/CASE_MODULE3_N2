@@ -11,11 +11,9 @@ import java.util.List;
 import static com.example.case_module3.dao.HatDao.connection;
 
 public class HattypeDao implements DaoInterface<Hattype> {
-    public static HattypeDao getInstance() {
-        return new HattypeDao();
-    }
-
-
+//    public static HattypeDao getInstance() {
+//        return new HattypeDao();
+//    }
 
     @Override
     public void insert(Hattype hattype) {

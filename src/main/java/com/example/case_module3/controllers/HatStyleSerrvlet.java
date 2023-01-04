@@ -1,6 +1,7 @@
 package com.example.case_module3.controllers;
 
 import com.example.case_module3.dao.HattypeDao;
+import com.example.case_module3.models.Hat;
 import com.example.case_module3.models.Hattype;
 import com.example.case_module3.services.HattypeService;
 
@@ -22,7 +23,8 @@ public class HatStyleSerrvlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
 //        List<Hattype> hattypes = HattypeService.hattypes;
 //        HttpSession session = req.getSession();
-        Hattype hattype = HattypeDao.getInstance().selectById(id);
+        HattypeDao hattypeDao = new HattypeDao();
+        Hattype hattype = hattypeDao.selectById(id);
         String name = hattype.getTypeName();
         req.setAttribute("hattype",name);
         dispatcher.forward(req, resp);

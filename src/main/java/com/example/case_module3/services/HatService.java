@@ -8,12 +8,12 @@ import java.util.List;
 public class HatService {
     public static List<Hat> hats = HatDao.getInstance().selectAll();
 
-    public void Add(Hat hat) {
+    public static void Add(Hat hat) {
         HatDao.getInstance().insert(hat);
         hats = HatDao.getInstance().selectAll();
     }
 
-    public void Delete(int id) {
+    public static void Delete(int id) {
         HatDao.getInstance().delete(id);
         hats = HatDao.getInstance().selectAll();
     }

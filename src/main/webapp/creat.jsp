@@ -9,10 +9,9 @@
 <html>
 <head>
     <title>Thêm mũ</title>
-  <form method="post" action="/creathat">
+  <form method="post" action="/creat">
     <input name="hatName" placeholder="nhập tên mũ"><br>
     <input name="img" placeholder="Thêm ảnh"><br>
-    <input name="img" placeholder="nhập img"><br>
     <input name="listImg" placeholder="Thêm list ảnh"><br>
     <input name="sellPrice" placeholder="nhập giá bán"><br>
     <input name="inputPrice" placeholder="nhập giá nhập"><br>
@@ -22,6 +21,7 @@
     <input name="detail" placeholder="nhập chi tiết"><br>
     <button type="submit">Create</button>
   </form>
+
 </head>
 <body>
 
