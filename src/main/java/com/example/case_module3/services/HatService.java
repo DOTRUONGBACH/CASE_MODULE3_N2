@@ -17,7 +17,13 @@ public class HatService {
         HatDao.getInstance().delete(id);
         hats = HatDao.getInstance().selectAll();
     }
-
+public static Hat findname(String name){
+    for (int i = 0; i < hats.size(); i++) {
+        if (name.equals(hats.get(i).getHatName()));
+        return new Hat();
+    }
+        return null;
+}
     public void Edit() {
 //        HatDao.getInstance().update(HatDao.getInstance().selectById());
         hats = HatDao.getInstance().selectAll();

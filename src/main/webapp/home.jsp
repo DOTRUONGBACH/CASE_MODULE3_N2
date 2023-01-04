@@ -59,7 +59,7 @@
                 <li class="nav-item box" style="position: relative; left: 15px; top: -5px">
                     <div class="container-2">
                         <span class="icon"><i class="fa fa-search"></i></span>
-                        <input type="search" id="search" placeholder="Search..."/>
+                        <input type="search" id="search" placeholder="Search..."/> //search
                     </div>
                 </li>
                 <c:if test="${sessionScope.get('username') == null}">
