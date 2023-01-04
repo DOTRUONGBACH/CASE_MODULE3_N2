@@ -44,9 +44,8 @@ public class HatServlet extends HttpServlet {
                     dispatcher = req.getRequestDispatcher("/admin.jsp");
                 } else {
                     dispatcher = req.getRequestDispatcher("/home.jsp");
+
                 }
-
-
             session.setAttribute("username", users.get(i).getUsername());
             req.setAttribute("hattype", hattypes);
             //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
