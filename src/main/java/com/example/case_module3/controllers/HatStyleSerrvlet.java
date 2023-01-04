@@ -3,6 +3,7 @@ package com.example.case_module3.controllers;
 import com.example.case_module3.dao.HattypeDao;
 import com.example.case_module3.models.Hat;
 import com.example.case_module3.models.Hattype;
+import com.example.case_module3.services.HatService;
 import com.example.case_module3.services.HattypeService;
 
 import javax.servlet.RequestDispatcher;
@@ -21,11 +22,15 @@ public class HatStyleSerrvlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/hattype.jsp");
         int id = Integer.parseInt(req.getParameter("id"));
+//        int idCata = Integer.parseInt(req.getParameter("idCata"));
 //        List<Hattype> hattypes = HattypeService.hattypes;
 //        HttpSession session = req.getSession();
+//        List<Hat> hats = HatService.findByIdHatIdCata(id, idCata);
+        List<Hat> hats = HatService.hats;
         HattypeDao hattypeDao = new HattypeDao();
         Hattype hattype = hattypeDao.selectById(id);
         String name = hattype.getTypeName();
+        req.setAttribute("hats", hats);
         req.setAttribute("hattype",name);
         dispatcher.forward(req, resp);
     }

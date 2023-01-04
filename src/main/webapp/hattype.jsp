@@ -180,33 +180,23 @@
 </div>
 
 
-<div class="container-fluid" style="margin-top: 2%">
-  <div style="text-align: center">
-    <img class="col-md-3" src="img/banner33.jpg" style="width: 250px; margin-top: 2%" alt="11">
-    <img class="col-md-3" src="img/banner11.jpg" style="width: 250px; margin-top: 2%" alt="11">
-    <img class="col-md-3" src="img/banner44.jpg" style="width: 250px; margin-top: 2%" alt="11">
-    <img class="col-md-3" src="img/banner22.jpg" style="width: 250px; margin-top: 2%" alt="11">
-    <img class="col-md-3" src="img/banner33.jpg" style="width: 250px; margin-top: 2%" alt="11">
-  </div>
+<div class="grid container-fluid" style="text-align: center">
+  <c:forEach var="h" items="${hats}">
+    <figure class="effect-zoe figure col-md-3">
+      <img src="imghat/${h.img}.jpg" alt="img25" style="width: 250px;"/>
+      <figcaption>
+        <h2>${h.sellPrice}<span></span></h2>
+        <p class="icon-links">
+          <a href="#"><span class="icon-heart"></span></a>
+          <a href="#"><span class="icon-eye"></span></a>
+          <a href="#"><span class="icon-paper-clip"></span></a>
+        </p>
+        <p class="description"></p>
+      </figcaption>
+    </figure>
+  </c:forEach>
 </div>
 
-<div class="col-md-6 col-lg-4 col-xl-3">
-  <div id="product-1" class="single-product">
-    <div class="part-1">
-      <ul>
-        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-        <li><a href="#"><i class="fas fa-expand"></i></a></li>
-      </ul>
-    </div>
-    <div class="part-2">
-      <h3 class="product-title">Here Product Title</h3>
-      <h4 class="product-old-price">$79.99</h4>
-      <h4 class="product-price">$49.99</h4>
-    </div>
-  </div>
-</div>
 
 <div>a</div>
 <div>a</div>

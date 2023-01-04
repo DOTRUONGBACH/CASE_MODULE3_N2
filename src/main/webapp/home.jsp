@@ -41,7 +41,7 @@
 
                     <ul class="dropdown-menu">
                         <c:forEach var="p" items="${hattype}">
-                        <li><a class="dropdown-item" href="/hatstyle?id=${p.idHattype}">${p.typeName}</a></li>
+                        <li><a class="dropdown-item" href="/hatstyle?id=${p.idHattype}&idCata=1">${p.typeName}</a></li>
                         </c:forEach>
                     </ul>
                 </li>
@@ -49,7 +49,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Nữ</a>
                     <ul class="dropdown-menu">
                         <c:forEach var="p" items="${hattype}">
-                            <li><a class="dropdown-item" href="/hatstyle?id=${p.idHattype}">${p.typeName}</a></li>
+                            <li><a class="dropdown-item" href="/hatstyle?id=${p.idHattype}&idCata=2">${p.typeName}</a></li>
                         </c:forEach>
                     </ul>
                 </li>
@@ -193,16 +193,16 @@
     <!-- The slideshow/carousel -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="img/banner11.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+            <img src="imghat/MJNA01.jpg" alt="Los Angeles" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="img/banner22.jpg" alt="Chicago" class="d-block" style="width:100%">
+            <img src="imghat/MCNA01.jpg" alt="Chicago" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="img/banner33.jpg" alt="New York" class="d-block" style="width:100%">
+            <img src="imghat/LCNU01.jpg" alt="New York" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="img/banner44.jpg" alt="New York" class="d-block" style="width:100%">
+            <img src="imghat/MJNA01.jpg" alt="New York" class="d-block" style="width:100%">
         </div>
     </div>
 
@@ -225,21 +225,21 @@
 
 <div class="container-fluid center-parent center-me" style="margin-top: 2%; text-align: center; display: inline-flex">
     <figure class="snip1104 blue col-md-4">
-        <img src="img/banner33.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+        <img src="imghat/MJNA01.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
         <figcaption>
             <h2>Sale <span> %</span></h2>
         </figcaption>
         <a href="#"></a>
     </figure>
     <figure class="snip1104 blue col-md-4" >
-        <img src="img/banner11.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+        <img src="imghat/MJNU01.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
         <figcaption>
             <h2>Sale <span> %</span></h2>
         </figcaption>
         <a href="#"></a>
     </figure>
     <figure class="snip1104 blue col-md-4" >
-        <img src="img/banner44.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+        <img src="imghat/LCNU01.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
         <figcaption>
             <h2>Sale <span> %</span></h2>
         </figcaption>
@@ -255,10 +255,11 @@
     </div>
 </div>
 
-<c:forEach var="h" items="${hats}">
+
 <div class="grid container-fluid" style="text-align: center">
+    <c:forEach var="h" items="${hats}">
     <figure class="effect-zoe figure col-md-3">
-        <img src="${h.img}" alt="img25" style="width: 250px;"/>
+        <img src="imghat/${h.img}.jpg" alt="img25" style="width: 250px;"/>
         <figcaption>
             <h2>${h.sellPrice}<span></span></h2>
             <p class="icon-links">
@@ -269,8 +270,9 @@
             <p class="description"></p>
         </figcaption>
     </figure>
+    </c:forEach>
 </div>
-</c:forEach>
+
 
 <div class="container-fluid" style="margin-top: 2%">
     <div style="text-align: center">
@@ -279,27 +281,12 @@
 </div>
 
 
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
-<div>a</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
 
 <footer class="footer-20192" style="background-color:#212529; float: bottom">
     <div class="site-section">

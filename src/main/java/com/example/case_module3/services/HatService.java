@@ -8,6 +8,10 @@ import java.util.List;
 public class HatService {
     public static List<Hat> hats = HatDao.getInstance().selectAll();
 
+    public static List<Hat> findByIdHatIdCata(int id, int idCata) {
+        return HatDao.selectByIdHatIdCata(id, idCata);
+    }
+
     public static void Add(Hat hat) {
         HatDao.getInstance().insert(hat);
         hats = HatDao.getInstance().selectAll();
