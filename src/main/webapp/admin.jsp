@@ -118,16 +118,16 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/banner11.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+      <img src="https://maynon.net/wp-content/uploads/2020/10/may-non-15a74bad482a58_thumb900.jpg" alt="Los Angeles" class="d-block" style="width:100%">
     </div>
     <div class="carousel-item">
-      <img src="img/banner22.jpg" alt="Chicago" class="d-block" style="width:100%">
+      <img src="https://munonsaigon.com/wp-content/uploads/2016/03/BANNER-MAY-NON-9.jpg" alt="Chicago" class="d-block" style="width:100%">
     </div>
     <div class="carousel-item">
-      <img src="img/banner33.jpg" alt="New York" class="d-block" style="width:100%">
+      <img src="https://maynon.net/wp-content/uploads/2020/10/may-non-15a74bad482a58_thumb900.jpg" alt="New York" class="d-block" style="width:100%">
     </div>
     <div class="carousel-item">
-      <img src="img/banner44.jpg" alt="New York" class="d-block" style="width:100%">
+      <img src="https://munonsaigon.com/wp-content/uploads/2016/03/BANNER-MAY-NON-9.jpg" alt="New York" class="d-block" style="width:100%">
     </div>
   </div>
 
@@ -150,21 +150,21 @@
 
 <div class="container-fluid center-parent center-me" style="margin-top: 2%; text-align: center; display: inline-flex">
   <figure class="snip1104 blue col-md-4">
-    <img src="img/banner33.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+    <img src="imghat/MLNU01.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
     <figcaption>
       <h2>Sale <span> %</span></h2>
     </figcaption>
     <a href="#"></a>
   </figure>
   <figure class="snip1104 blue col-md-4" >
-    <img src="img/banner11.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+    <img src="imghat/MJNA01.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
     <figcaption>
       <h2>Sale <span> %</span></h2>
     </figcaption>
     <a href="#"></a>
   </figure>
   <figure class="snip1104 blue col-md-4" >
-    <img src="img/banner44.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
+    <img src="imghat/MCNA01.jpg" alt="sample35" style="width: 400px; margin-top: 2%"/>
     <figcaption>
       <h2>Sale <span> %</span></h2>
     </figcaption>
@@ -187,102 +187,20 @@
 </div>
 
 <div class="grid container-fluid" style="text-align: center">
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner33.jpg" alt="img25" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner22.jpg" alt="img25" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner44.jpg" alt="img25" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner11.jpg" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner44.jpg" alt="img25" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner11.jpg" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner33.jpg" alt="img25" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
-  <figure class="effect-zoe figure col-md-3">
-    <img src="img/banner11.jpg" alt="img25" style="width: 250px;"/>
-    <figcaption>
-      <h2>69.000đ<span></span></h2>
-      <p class="icon-links">
-        <a href="#"><span class="icon-heart"></span></a>
-        <a href="#"><span class="icon-eye"></span></a>
-        <a href="#"><span class="icon-paper-clip"></span></a>
-      </p>
-      <p class="description"></p>
-    </figcaption>
-  </figure>
+  <c:forEach var="h" items="${hats}">
+    <figure class="effect-zoe figure col-md-3">
+      <img src="imghat/${h.img}.jpg" alt="img25" style="width: 250px;"/>
+      <figcaption>
+        <h2>${h.sellPrice}<span></span></h2>
+        <p class="icon-links">
+          <a href="#"><span class="icon-heart"></span></a>
+          <a href="#"><span class="icon-eye"></span></a>
+          <a href="#"><span class="icon-paper-clip"></span></a>
+        </p>
+        <p class="description"></p>
+      </figcaption>
+    </figure>
+  </c:forEach>
 </div>
 
 

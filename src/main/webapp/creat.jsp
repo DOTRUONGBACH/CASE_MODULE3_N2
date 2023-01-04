@@ -9,7 +9,11 @@
 <html>
 <head>
     <title>Thêm mũ</title>
-  <form method="post" action="/creat">
+    <link href="css/create.css">
+</head>
+<body>
+<tbody>
+<form method="post" action="/creat">
     <input name="hatName" placeholder="nhập tên mũ"><br>
     <input name="img" placeholder="Thêm ảnh"><br>
     <input name="listImg" placeholder="Thêm list ảnh"><br>
@@ -20,10 +24,7 @@
     <input name="description" placeholder="nhập mô tả"><br>
     <input name="detail" placeholder="nhập chi tiết"><br>
     <button type="submit">Create</button>
-  </form>
-
-</head>
-<body>
-
+</form>
+</tbody>
 </body>
 </html>

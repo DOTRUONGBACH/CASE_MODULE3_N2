@@ -11,6 +11,36 @@ import java.util.List;
 public class HatDao implements DaoInterface<Hat> {
     static Connection connection = ConnectionMySql.getConnection();
 
+    public static List<Hat> selectByIdHatIdCata(int id, int idCata) {
+        List<Hat> hats = new ArrayList<>();
+        String sql = "select * from hat" +
+                "where (idHattype = ?) and (idCatagory = ?);";
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                int hatId = resultSet.getInt("hatId");
+                String hatName = resultSet.getString("hatName");
+                String img = resultSet.getString("img");
+                List<String> listImg = Collections.singletonList(resultSet.getString("listImg"));
+                double sellPrice = resultSet.getDouble("sellPrice");
+                double inputPrice = resultSet.getDouble("inputPrice");
+                double promotionPrice = resultSet.getDouble("promotionPrice");
+                int quantity = resultSet.getInt("quantity");
+                String description = resultSet.getString("description");
+                String detail = resultSet.getString("detail");
+                int idHattype = resultSet.getInt("idHattype");
+                int idCatagory = resultSet.getInt("idCatagory");
+
+                hats.add(new Hat(hatId, hatName, img, listImg, sellPrice, inputPrice, promotionPrice, quantity,
+                        description, detail, idHattype, idCatagory));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return hats;
+    }
+
     public static HatDao getInstance() {
         return new HatDao();
     }
