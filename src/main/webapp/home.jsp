@@ -255,109 +255,27 @@
     </div>
 </div>
 
+<c:forEach var="h" items="${hats}">
+<div class="grid container-fluid" style="text-align: center">
+    <figure class="effect-zoe figure col-md-3">
+        <img src="${h.img}" alt="img25" style="width: 250px;"/>
+        <figcaption>
+            <h2>${h.sellPrice}<span></span></h2>
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+            <p class="description"></p>
+        </figcaption>
+    </figure>
+</div>
+</c:forEach>
+
 <div class="container-fluid" style="margin-top: 2%">
     <div style="text-align: center">
         <h4 class="btn btn-primary">Xem thêm</h4>
     </div>
-</div>
-
-<div class="grid container-fluid" style="text-align: center">
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner33.jpg" alt="img25" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner22.jpg" alt="img25" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner44.jpg" alt="img25" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner11.jpg" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner44.jpg" alt="img25" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner11.jpg" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner33.jpg" alt="img25" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
-    <figure class="effect-zoe figure col-md-3">
-        <img src="img/banner11.jpg" alt="img25" style="width: 250px;"/>
-        <figcaption>
-            <h2>69.000đ<span></span></h2>
-            <p class="icon-links">
-                <a href="#"><span class="icon-heart"></span></a>
-                <a href="#"><span class="icon-eye"></span></a>
-                <a href="#"><span class="icon-paper-clip"></span></a>
-            </p>
-            <p class="description"></p>
-        </figcaption>
-    </figure>
 </div>
 
 
