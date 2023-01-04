@@ -24,9 +24,9 @@ public class HatServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
 
-        List<Hattype> hattypes = HattypeService.hattypes;
+//        List<Hattype> hattypes = HattypeService.hattypes;
         List<Hat> hats = HatService.hats;
-        req.setAttribute("hattype", hattypes);
+//        req.setAttribute("hattype", hattypes);
         req.setAttribute("hats", hats);
         dispatcher.forward(req, resp);
     }
@@ -37,7 +37,7 @@ public class HatServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         List<User> users = UserDao.getInstance().selectAcc();
-        List<Hattype> hattypes = HattypeService.hattypes;
+//        List<Hattype> hattypes = HattypeService.hattypes;
         List<Hat> hats = HatService.hats;
         HttpSession session = req.getSession();
         RequestDispatcher dispatcher;
@@ -51,7 +51,7 @@ public class HatServlet extends HttpServlet {
 
 
             session.setAttribute("username", users.get(i).getUsername());
-            req.setAttribute("hattype", hattypes);
+//            req.setAttribute("hattype", hattypes);
             req.setAttribute("hats", hats);
             //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
             dispatcher.forward(req, resp);

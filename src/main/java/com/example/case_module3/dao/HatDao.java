@@ -75,7 +75,8 @@ public class HatDao implements DaoInterface<Hat> {
     @Override
     public List<Hat> selectAll() {
         List<Hat> hats = new ArrayList<>();
-        String sql = "Select * from Hat";
+        String sql = "select hat.*, hattype.typeName from hat\n" +
+                "join hattype on hat.idHattype = hattype.idHattype;";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
@@ -101,7 +102,6 @@ public class HatDao implements DaoInterface<Hat> {
         }
         return hats;
     }
-
 
 
     @Override
@@ -132,6 +132,9 @@ public class HatDao implements DaoInterface<Hat> {
             return null;
         }
     }
+
+
+
 
     @Override
     public ArrayList<Hat> selectByCondition(String condition) {

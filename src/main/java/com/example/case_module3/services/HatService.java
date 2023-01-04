@@ -23,4 +23,6 @@ public class HatService {
         hats = HatDao.getInstance().selectAll();
     }
 
+
+
 }
