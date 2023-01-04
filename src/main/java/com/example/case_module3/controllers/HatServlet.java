@@ -28,30 +28,31 @@ public class HatServlet extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
-      @Override
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-          List<User> users = UserDao.getInstance().selectAcc();
-          List<Hattype> hattypes = HattypeService.hattypes;
 
-HttpSession session = req.getSession();
+        List<User> users = UserDao.getInstance().selectAcc();
+        List<Hattype> hattypes = HattypeService.hattypes;
 
-          for (int i = 0; i < users.size(); i++) {
-              if(username.equals(users.get(i).getUsername())&&password.equals(users.get(i).getPassword())){
-                  RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-                  session.setAttribute("username",users.get(i).getUsername());
-                  req.setAttribute("hattype", hattypes);
-                  //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
-                  dispatcher.forward(req,resp);
-                  return;
-              }
-          }
-          req.setAttribute("note", "Sai ten dang nhap!");
-          RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-          dispatcher.forward(req,resp);
+        HttpSession session = req.getSession();
+
+        for (int i = 0; i < users.size(); i++) {
+            if (username.equals(users.get(i).getUsername()) && password.equals(users.get(i).getPassword())) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+                session.setAttribute("username", users.get(i).getUsername());
+                req.setAttribute("hattype", hattypes);
+                //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
+                dispatcher.forward(req, resp);
+                return;
+            }
+        }
+        req.setAttribute("note", "Sai ten dang nhap!");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+        dispatcher.forward(req, resp);
 
 
     }
-    }
+}
 
