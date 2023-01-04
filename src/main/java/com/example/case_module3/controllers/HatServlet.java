@@ -37,22 +37,29 @@ public class HatServlet extends HttpServlet {
         List<Hattype> hattypes = HattypeService.hattypes;
 
         HttpSession session = req.getSession();
-
+        RequestDispatcher dispatcher;
         for (int i = 0; i < users.size(); i++) {
             if (username.equals(users.get(i).getUsername()) && password.equals(users.get(i).getPassword())) {
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-                session.setAttribute("username", users.get(i).getUsername());
-                req.setAttribute("hattype", hattypes);
-                //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
-                dispatcher.forward(req, resp);
-                return;
-            }
-        }
-        req.setAttribute("note", "Sai ten dang nhap!");
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-        dispatcher.forward(req, resp);
+                if (username.equals("admin")  && password.equals("admin")) {
+                    dispatcher = req.getRequestDispatcher("/admin.jsp");
+                } else {
+                    dispatcher = req.getRequestDispatcher("/home.jsp");
+                }
 
+
+            session.setAttribute("username", users.get(i).getUsername());
+            req.setAttribute("hattype", hattypes);
+            //session lưu tài khoản trong 1 phiên đăng nhập để khi chuyển sang thẻ khác không bị mất.
+            dispatcher.forward(req, resp);
+            return;
+        }
 
     }
+        req.setAttribute("note","Sai ten dang nhap!");
+     dispatcher = req.getRequestDispatcher("/home.jsp");
+        dispatcher.forward(req,resp);
+
+
+}
 }
 

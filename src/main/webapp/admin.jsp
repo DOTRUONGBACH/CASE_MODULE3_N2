@@ -60,7 +60,7 @@
         <li class="nav-item" style="position: absolute; left: 75%">
           <div class="dropdown">
             <div class="dropdown-toggle btn btn-secondary" data-bs-toggle="dropdown">
-              Hello...@gmail.com
+              Hello Admin
             </div>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Thông tin</a></li>
